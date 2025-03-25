@@ -5,4 +5,5 @@ urlpatterns = [
     path('employees/', EmployeeListView.as_view(), name='employee-list'),  
     path('employees/filter/', EmployeeFilterView.as_view(), name='employee-filter'),
     path("employees/<int:pk>/", EmployeeDetailsView.as_view(), name="employee-detail"), 
+    path('employees/<int:pk>/delete/', EmployeeDeleteView.as_view(), name='employee-delete'),  
 ]
