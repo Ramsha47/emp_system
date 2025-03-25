@@ -100,3 +100,7 @@ class EmployeeFilterView(generics.ListAPIView):
             queryset = queryset.filter(salary__lte=max_salary)
 
         return queryset
+class EmployeeDeleteView(generics.DestroyAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
+    permission_classes = [permissions.IsAuthenticated]
